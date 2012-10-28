@@ -152,7 +152,7 @@ amqp_stream( {connection:connection, exchange:'rpc', routingKey:'upper'}, functi
 
 ###`amqp_stream.createCorrelatedRequest([correlationId] [, callback])`
 
-    Sets up a new correalted stream
+Sets up a new correalted stream
 
 - `correlationId` string, optional
     A custom correlationId may be provided, otherwise one will be generated automatically. 
@@ -162,9 +162,9 @@ amqp_stream( {connection:connection, exchange:'rpc', routingKey:'upper'}, functi
 
 ###`amqp_stream.on('correlatedRequest', callback)`
 
-    The correlatedRequest event is emitted on amqp_streams receiving the correlated request. 
-    The callback is executed and passed a single argument - a duplex stream created via 
-    `createCorrelatedResponse`.
+The correlatedRequest event is emitted on amqp_streams receiving the correlated request. 
+The callback is executed and passed a single argument - a duplex stream created via 
+`createCorrelatedResponse`.
 
 
 ## Integration With Other Stream Modules
