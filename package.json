@@ -1,0 +1,29 @@
+{ "name" : "amqp-stream"
+, "description" : "Stream interface to node's AMQP driver"
+, "keywords" : [ "amqp", "stream" ]
+, "version" : "0.1.0"
+, "preferGlobal" : false
+, "devDependencies": {
+    "amqp" :  "0.1.x",
+    "tap"  :  "0.3.x"
+  }
+, "scripts": { "test" : "tap test" }
+, "author" : { "name" : "Jason Pincin" }
+, "contributors" :
+  [ 
+  ]
+, "repository" :
+  { "type" : "git"
+  , "url" : "git://github.com/jasonpincin/node-amqp-stream.git"
+  }
+, "bugs" :
+  { "url" : "http://github.com/jasonpincin/node-amqp-stream/issues"
+  }
+, "main" : "./index"
+, "engines" : { "node" : ">=0.8" }
+, "licenses" :
+  [ { "type" : "MIT"
+    , "url" : "http://github.com/jasonpincin/node-amqp-stream/raw/master/LICENSE-MIT"
+    }
+  ]
+}
