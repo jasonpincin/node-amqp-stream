@@ -15,8 +15,8 @@ the expaning collection of node stream services.
 
 Example: A simple chat client using amqp-stream with pipes.
 
-
 chat.js
+
 ```javascript
 var amqp = require( 'amqp' ), amqp_stream = require( 'amqp-stream' );
 
