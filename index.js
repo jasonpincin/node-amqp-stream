@@ -218,30 +218,7 @@ var AmqpStream = function ( options, callback ) {
             }
         }
     }
-
-    var _DISABLED = function () {
-        // If a queue was not provided, we will not listen by default, but if 
-        // a listener is bound, we will create an exclusive queue to start listening on
-        var bindOnDemand = function ( ev, fn ) {
-            // Is this stream was build from a connection, connection/exchange may not be ready yet
-            if ( stream.queue && typeof stream.queue == 'object' ) {
-                stream.removeListener( 'newListener', bindOnDemand );
-                return;
-            }
-            if ( stream.exchange && stream.exchange.state && stream.exchange.state == 'open' ) {
-                if ( [ 'data', 'error', 'end' ].indexOf( ev ) != (-1) ) {
-                    if ( stream.exchange && !stream.queue ) {
-                        buildQueue();
-                    }
-                    stream.removeListener( 'newListener', bindOnDemand );
-                }
-            } else {
-                stream.on( 'exchangeReady', bindOnDemand );
-            }
-        }
-        this.on( 'newListener', bindOnDemand );
-    }
-
+    
     // Configure the stream
     configureStream( connection, options );
 }
@@ -416,9 +393,9 @@ AmqpStream.prototype.createCorrelatedResponse = function ( routingKey, correlati
 /* createStream
  * Convenience function that matches some node conventions, same as: new AmqpStream, or just AmqpStream
  */
- AmqpStream.createStream = function () {
+AmqpStream.createStream = function () {
     return AmqpStream.apply( null, arguments );
- }
+} 
 
 module.exports = AmqpStream;
 
